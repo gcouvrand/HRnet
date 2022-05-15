@@ -1,0 +1,14 @@
+{
+  "presets": ["@babel/preset-react"],
+  "ignore": [
+      "**/*.test.js"
+  ],
+  "env": {
+      "development": {
+          "presets": [["@babel/preset-react", { "development": true }]]
+      },
+      "production": {
+          "presets": [["@babel/preset-react", { "absoluteRuntime": false }]]
+      }
+  }
+}
