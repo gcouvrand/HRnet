@@ -4,7 +4,7 @@ import Tables from "../../components/Tables"
 function Employees() {
     return(
         <main>
-            <div id="employee-div" class="container">
+            <div id="employee-div" className="container">
                 <h1>Current Employees</h1>
                 <Tables/>
                 <Link to="/">Home</Link>

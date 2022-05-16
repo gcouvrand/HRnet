@@ -64,10 +64,10 @@ function Home() {
 
     return(
         <main>
-            <div class="title">
+            <div className="title">
                 <h1>HRnet</h1>
             </div>
-            <div class="container">
+            <div className="container">
                 <Link to="/employees-list">View Current Employees</Link>
                 <h2>Create Employee</h2>
                 <form action="#" id="create-employee">
@@ -83,7 +83,7 @@ function Home() {
                     <label for="start-date">Start Date</label>
                     <DatePicker selected={startDate} onChange={(date:Date) => setStartDate(date)} id="start-date" required="required" />
 
-                    <fieldset class="address">
+                    <fieldset className="address">
                         <legend>Address</legend>
 
                         <label for="street">Street</label>
