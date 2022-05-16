@@ -53,7 +53,7 @@ function Home() {
             state : state.value,
             department : department.value,
         }
-
+        console.log(employee)
         let employeeArray = Object.values(employee);
 
         if (!employeeArray.some(element => element === '' || element === "ull")) {
@@ -71,38 +71,38 @@ function Home() {
                 <Link to="/employees-list">View Current Employees</Link>
                 <h2>Create Employee</h2>
                 <form action="#" id="create-employee">
-                    <label for="first-name">First Name</label>
+                    <label htmlFor="first-name">First Name</label>
                     <input ref={firstNameInput} id="first-name" required="required"/>
 
-                    <label for="last-name">Last Name</label>
+                    <label htmlFor="last-name">Last Name</label>
                     <input ref={lastNameInput} id="last-name" required="required"/>
 
-                    <label for="date-of-birth">Date of Birth</label>
+                    <label htmlFor="date-of-birth">Date of Birth</label>
                     <DatePicker selected={birthDate} onChange={(date:Date) => setBirthDate(date)} id="date-of-birth" required="required" />
 
-                    <label for="start-date">Start Date</label>
+                    <label htmlFor="start-date">Start Date</label>
                     <DatePicker selected={startDate} onChange={(date:Date) => setStartDate(date)} id="start-date" required="required" />
 
                     <fieldset className="address">
                         <legend>Address</legend>
 
-                        <label for="street">Street</label>
+                        <label htmlFor="street">Street</label>
                         <input ref={streetInput} id="street" required="required" />
 
-                        <label for="city">City</label>
+                        <label htmlFor="city">City</label>
                         <input ref={cityInput} id="city" required="required" />
 
-                        <label for="state">State</label>
+                        <label htmlFor="state">State</label>
                         <Dropdown
                             options={statesOptions}
                             onChange={onEditState}
                             value={state}
                         />
-                        <label for="zip-code">Zip Code</label>
+                        <label htmlFor="zip-code">Zip Code</label>
                         <input ref={zipInput} id="zip-code" required="required"/>
                     </fieldset>
 
-                    <label for="department">Department</label>
+                    <label htmlFor="department">Department</label>
                         <Dropdown
                             options={departmentsOptions}
                             onChange={onEditDepartment}

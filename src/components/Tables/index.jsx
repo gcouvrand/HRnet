@@ -73,13 +73,11 @@ export default function QuickFilteringGrid() {
     {
       field: 'birthDate',
       headerName: 'Birth date',
-      type: 'number',
       width: 110,
     },
     {
       field: 'startDate',
       headerName: 'Start date',
-      type: 'number',
       width: 110,
     },
     {
@@ -95,7 +93,6 @@ export default function QuickFilteringGrid() {
     {
       field: 'zip',
       headerName: 'Zip',
-      type: 'number',
       width: 70,
     },
     {
