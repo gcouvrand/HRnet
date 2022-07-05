@@ -1,18 +1,18 @@
-import { createSlice } from "@reduxjs/toolkit"
+import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-    employees: []
+  employees: [],
 }
 
 const employeeReducer = createSlice({
-    name: "employee",
-    initialState,
-    reducers: {
-        pushEmployee: (draft, action) => {
-            draft.employees.push(action.payload)
-            return
-        }
-    }
+  name: 'employee',
+  initialState,
+  reducers: {
+    pushEmployee: (draft, action) => {
+      draft.employees.push(action.payload)
+      return
+    },
+  },
 })
 
 const { actions, reducer } = employeeReducer

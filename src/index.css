@@ -4,7 +4,6 @@
   justify-content: center;
 }
 
-
 .container {
   display: flex;
   flex-direction: column;
@@ -61,5 +60,5 @@ label {
 }
 
 .MuiDataGrid-columnHeaderTitle {
-  font-weight: bold!important;
+  font-weight: bold !important;
 }

@@ -1,14 +1,14 @@
-import { DataGrid, GridColDef } from '@mui/x-data-grid';
-import { useSelector } from "react-redux";
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import IconButton from '@mui/material/IconButton';
-import TextField from '@mui/material/TextField';
-import ClearIcon from '@mui/icons-material/Clear';
-import SearchIcon from '@mui/icons-material/Search';
+import { DataGrid, GridColDef } from '@mui/x-data-grid'
+import { useSelector } from 'react-redux'
+import * as React from 'react'
+import Box from '@mui/material/Box'
+import IconButton from '@mui/material/IconButton'
+import TextField from '@mui/material/TextField'
+import ClearIcon from '@mui/icons-material/Clear'
+import SearchIcon from '@mui/icons-material/Search'
 
 function escapeRegExp(value) {
-  return value.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&');
+  return value.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&')
 }
 
 function QuickSearchToolbar(props) {
@@ -54,11 +54,10 @@ function QuickSearchToolbar(props) {
         }}
       />
     </Box>
-  );
+  )
 }
 
 export default function QuickFilteringGrid() {
-
   const columns: GridColDef[] = [
     {
       field: 'firstName',
@@ -105,29 +104,29 @@ export default function QuickFilteringGrid() {
       headerName: 'Department',
       width: 100,
     },
-  ];
+  ]
 
   const employeesList = useSelector((state) => state.employee.employees)
-  const [rows, setRows] = React.useState(employeesList);
-  const [searchText, setSearchText] = React.useState('');
+  const [rows, setRows] = React.useState(employeesList)
+  const [searchText, setSearchText] = React.useState('')
 
   const requestSearch = (searchValue) => {
-    setSearchText(searchValue);
-    const searchRegex = new RegExp(escapeRegExp(searchValue), 'i');
+    setSearchText(searchValue)
+    const searchRegex = new RegExp(escapeRegExp(searchValue), 'i')
     const filteredRows = employeesList.filter((row) => {
       return Object.keys(row).some((field) => {
-        return searchRegex.test(row[field].toString());
-      });
-    });
-    setRows(filteredRows);
-  };
+        return searchRegex.test(row[field].toString())
+      })
+    })
+    setRows(filteredRows)
+  }
 
   React.useEffect(() => {
-    setRows(employeesList);
-  }, [employeesList]);
+    setRows(employeesList)
+  }, [employeesList])
 
   return (
-    <Box sx={{ height: 400, width: 0.80 }}>
+    <Box sx={{ height: 400, width: 0.8 }}>
       <DataGrid
         components={{ Toolbar: QuickSearchToolbar }}
         rows={rows}
@@ -142,5 +141,5 @@ export default function QuickFilteringGrid() {
         }}
       />
     </Box>
-  );
+  )
 }
